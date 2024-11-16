@@ -18,7 +18,7 @@
     }
 
     #ar-button {
-        background-image: url(../../assets/ic_view_in_ar_new_googblue_48dp.png);
+        background-image: url(./image/logo_1.png);
         background-repeat: no-repeat;
         background-size: 20px 20px;
         background-position: 12px 50%;
@@ -53,16 +53,12 @@
 
 <body>
 
-    <model-viewer src="./model/model_0.glb" poster='./image/dino.png' shadow-intensity="1" ar camera-controls
-        touch-action="pan-y" alt="A 3D model carousel" camera-orbit="220deg 75deg 10m">
+    <model-viewer src="./model/model_0.glb" poster='./image/logo_0.png' shadow-intensity="1" ar ar-modes="webxr quick-look scene-viewer" camera-controls
+        touch-action="pan-y" alt="A 3D model carousel" camera-orbit="220deg 75deg 10m" autoplay>
 
         <button slot="ar-button" id="ar-button">
-            View in your space
+            ARモードON
         </button>
-
-        <div id="ar-prompt">
-            <img src='./image/dino.png'>
-        </div>
 
         <button id="ar-failure">
             AR is not tracking!
@@ -93,7 +89,7 @@
         window.switchSrc = (element, name) => {
             const base = "./model//" + name;
             modelViewer.src = base + '.glb';
-            modelViewer.poster = base + '.webp';
+            modelViewer.poster = base + '.png';
             const slides = document.querySelectorAll(".slide");
             slides.forEach((element) => { element.classList.remove("selected"); });
             element.classList.add("selected");
@@ -117,7 +113,7 @@
         }
 
         #ar-button {
-            background-image: url('./image/dino.png');
+            background-image: url('./image/logo_1.png');
             background-repeat: no-repeat;
             background-size: 20px 20px;
             background-position: 12px 50%;
