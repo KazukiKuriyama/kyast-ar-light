@@ -1,9 +1,10 @@
 <html>
 
 <head>
-    <title>Title</title>
+    <title>KYAST AR LIGHT</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/logo_1.png" />
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <style>
@@ -49,12 +50,33 @@
     #ar-button:focus-visible {
         outline: 1px solid #4285f4;
     }
+
+    #logo-container {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+    }
+
+    #logo-container img {
+        width: auto;
+        height: 6dvh;
+        cursor: pointer;
+    }
+
+    #logo-container a {
+        display: block;
+    }
 </style>
 
 <body>
-
     <model-viewer src="./model/model_0.glb" poster='./image/logo_0.png' shadow-intensity="1" ar ar-modes="webxr quick-look scene-viewer" camera-controls
         touch-action="pan-y" alt="A 3D model carousel" camera-orbit="220deg 75deg 10m" autoplay>
+        <div id="logo-container">
+            <a href="https://kyastal.com" target="_blank">
+                <img src="./image/logo_2.png" alt="Home Logo">
+            </a>
+        </div>
 
         <button slot="ar-button" id="ar-button">
             ARモードON
